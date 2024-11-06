@@ -11,8 +11,8 @@ public class Dude{
   public Dude(float s,int c,String e,float GR){
     xPos = 200;
     yPos = 200;
-    speedX = random(10);
-    speedY = random(10);
+    speedX = random(-10,10);
+    speedY = random(-10,10);
     size = s; 
     coluor = c;
     emotion = e;
@@ -20,10 +20,20 @@ public class Dude{
     
   }
   public void update(){
+    if (xPos-(size/2)<=0|| xPos+(size/2)>=400){
+      speedX= -1*speedX;
+    }
+    if (yPos-(size/2) <= 0 || yPos+(size/2)>=400){
+      speedY = -1*speedY;
+    }
   xPos += speedX;
   yPos += speedY;
+  size += growthRate;
+  drawDude();
   }
   private void drawDude(){
+    fill(coluor);
+    circle(xPos,yPos,size);
     
   }
 }
