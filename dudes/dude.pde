@@ -28,12 +28,18 @@ public class Dude{
     }
   xPos += speedX;
   yPos += speedY;
-  size += growthRate;
+  //size += size * growthRate;
   drawDude();
   }
   private void drawDude(){
+    if (emotion.equals("happy")){
+      
+    }
     fill(coluor);
     circle(xPos,yPos,size);
     
   }
+}
+private void smile(){
+  
 }
