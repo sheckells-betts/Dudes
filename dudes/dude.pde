@@ -20,15 +20,9 @@ public class Dude{
     
   }
   public void update(){
-    if (xPos-(size/2)<=0|| xPos+(size/2)>=400){
-      speedX= -1*speedX;
-    }
-    if (yPos-(size/2) <= 0 || yPos+(size/2)>=400){
-      speedY = -1*speedY;
-    }
+  colide(); 
   xPos += speedX;
   yPos += speedY;
-  //size += size * growthRate;
   drawDude();
   }
   private void drawDude(){
@@ -39,7 +33,36 @@ public class Dude{
     circle(xPos,yPos,size);
     
   }
-}
-private void smile(){
   
+  private void colide(){
+  if (xPos-(size/2)<=0|| xPos+(size/2)>=400.0){
+      speedX= (-1*speedX);
+     
+      size += size * growthRate;
+    }
+    if (yPos-(size/2) <= 0 || yPos+(size/2)>=400.0){
+      speedY = (-1*speedY);
+      
+      size += size * growthRate;
+    }
+    
+    
+    
 }
+public float getX(){
+  return xPos;
+    }
+public float getY() {
+  return  yPos;
+}
+public float getSize(){
+  return size;
+}
+public float getSpeedX(){
+  return speedX;
+}
+public void setSpeedX(float in){
+  speedX=in;
+}
+}
+  
