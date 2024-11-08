@@ -1,4 +1,4 @@
 # Dudes
 im making dudes
-Hello world
-Man I Love Frogs
+
+the dudes bounce around the screen and when they hit into each other they multiply 
