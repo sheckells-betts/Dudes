@@ -17,16 +17,22 @@ void draw(){
   
   background(#DB2351);
    
- for (int i = 0; i < allDudes.size()-1; i++){
+ for (int i = 0; i < allDudes.size(); i++){
    allDudes.get(i).update();
-    if (allDudes.get(i).getX() == allDudes.get(i+1).getX()&&allDudes.get(i).getY()==allDudes.get(i+1).getY()){
-      allDudes.get(i).setSpeedX(-1*allDudes.get(i).getSpeedX());
-      makeMoreDudes();
-      allDudes.get(i).update();
-      System.out.println(i);
-    }
-    else {
+   if (allDudes.get(i).getSize()>100){
+     allDudes.remove(i);
+     i=0;
+   }
+   //for (int a=0; a < allDudes.size(); a++){
+     
+ 
+   // if (allDudes.get(i).getX() == allDudes.get(a).getX()&&allDudes.get(i).getY()== allDudes.get(a).getY()){
+   //   allDudes.get(i).setSpeedX(-1*allDudes.get(i).getSpeedX());
+   //   makeMoreDudes();
+   //   allDudes.get(i).update();
+   // }
     
+   //}
     allDudes.get(i).update();
    }
   }
@@ -34,7 +40,7 @@ void draw(){
   //d1.update();
   
   
-}
+
 public void makeMoreDudes(){
   allDudes.add(new Dude(10.0,#2AC68E,"nutral",0.01));
 }

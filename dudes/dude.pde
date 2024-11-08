@@ -9,8 +9,8 @@ public class Dude{
   private float yPos;
   
   public Dude(float s,int c,String e,float GR){
-    xPos = 200;
-    yPos = 200;
+    xPos = random(200);
+    yPos = random(200);
     speedX = random(-10,10);
     speedY = random(-10,10);
     size = s; 
@@ -37,13 +37,14 @@ public class Dude{
   private void colide(){
   if (xPos-(size/2)<=0|| xPos+(size/2)>=400.0){
       speedX= (-1*speedX);
-     
+     makeMoreDudes();
       size += size * growthRate;
     }
     if (yPos-(size/2) <= 0 || yPos+(size/2)>=400.0){
       speedY = (-1*speedY);
       
       size += size * growthRate;
+      makeMoreDudes();
     }
     
     
