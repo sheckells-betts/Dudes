@@ -7,7 +7,15 @@ public class Dude {
   private float growthRate;
   private float xPos;
   private float yPos;
-
+public Dude(){
+  xPos = random(250);
+    yPos = random(250);
+    speedX = random(-10, 10);
+    speedY = random(-10, 10);
+    size = random(5,20);
+    coluor =  #2AC68E;
+    growthRate = random(0.1);
+}
   public Dude(float s, int c, String e, float GR, float x, float y) {
     xPos = x;
     yPos = y;
@@ -33,14 +41,19 @@ public class Dude {
   }
 
   private void colide() {
+     int temp = (int)(random(5));
     if (xPos-(size/2)<=0|| xPos+(size/2)>=400.0) {
       speedX= (-1*speedX);
-      
+     if (temp==4){
+     makeMoreDudes();
+     }
       size += size * growthRate;
     }
     if (yPos-(size/2) <= 0 || yPos+(size/2)>=400.0) {
       speedY = (-1*speedY);
-
+      if (temp==4){
+     makeMoreDudes();
+     }
       size += size * growthRate;
       
     }
